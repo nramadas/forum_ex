@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%=yield(:title)%></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="row">
+<% flash.each do |key, value| %>
+  <p><%= value %></p>
+<% end %>
+<% if current_user %>
+  <p>You are logged in as <%= current_user.name %></p>
+<% end %>
+<hr/>
+<%= render 'layouts/header' %>
+<hr />
+<%= yield %>
+</div>
+</body>
+</html>

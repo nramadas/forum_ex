@@ -1,0 +1,9 @@
+<% content_for(:title) {"Create Post"} %>
+
+<h1>Create Post</h1>
+
+<%= simple_form_for(@post) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :body %>
+  <%= f.button :submit, value: "Create Post" %>
+<% end %>

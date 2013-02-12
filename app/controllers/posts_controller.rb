@@ -22,8 +22,10 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.includes(:comments).find(params[:id])
-    @author = User.find(@post.author_id)
+    @author = User.find(@post.author_id) # cant you get the author
+    # from the association between author and post?
     @comment = Comment.new(post_id: params[:id])
+    # same here, isn't there an association that covers this?
   end
 
 end

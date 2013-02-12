@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_name(params[:session][:name])
     if user
-      flash[:success] = "Welcome back"
+      flash[:success] = "Welcome back" # Remember to user flash.now, otherwise the notice
+      # will persist over a request.
       sign_in(user)
       redirect_to user
     else

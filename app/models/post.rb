@@ -12,6 +12,8 @@ class Post < ActiveRecord::Base
     self.comments.where("author_id = ?", user.id)
   end
 
+  # i'm not sure about this one. Can't this be set up as an association?
+
   def self.commented_by(user)
     self
       .joins("LEFT JOIN comments ON posts.id = comments.post_id")

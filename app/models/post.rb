@@ -13,10 +13,10 @@ class Post < ActiveRecord::Base
   end
 
   def self.commented_by(user)
-    # self
-    #   .select("posts.*, comments.*")
-    #   .joins("OUTER JOIN comments ON comments.post_id = posts.id")
-    #   .where("comments.author_id = ?", user.id)
+    self
+      .joins("LEFT JOIN comments ON posts.id = comments.post_id")
+      .where("comments.author_id = ? OR posts.author_id = ?",user.id, user.id)
+      .group("posts.id")
   end
 
 end

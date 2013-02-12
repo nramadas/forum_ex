@@ -7,14 +7,6 @@ class User < ActiveRecord::Base
   has_many :commented_posts, class_name: "Post",
             through: :comments, source: :post
 
-  def commented_posts2
-    self
-      .posts
-      .joins(:comments)
-      .group("post.id")
-      .order("comments.updated_at DESC")
-  end
-
   def add_remember_token
     self.remember_token = SecureRandom.urlsafe_base64
     self.save!

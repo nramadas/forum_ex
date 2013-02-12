@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.last_viewed_user_page = Time.now
     @user.save!
-    @posts = @user.commented_posts.uniq
+    @posts = Post.commented_by(@user)
+    # @posts = @user.commented_posts2.uniq
   end
 end

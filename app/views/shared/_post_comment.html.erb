@@ -1,0 +1,8 @@
+<li>
+  <%= link_to post.title, post %>
+  <%= "Created by #{post.author.name}" %>
+  <ul>
+    <%= render post.comments_for(@user) %>
+  </ul>
+</li>
+<hr/>

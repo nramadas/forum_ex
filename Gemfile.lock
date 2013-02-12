@@ -127,6 +127,9 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rack-webconsole (0.1.2)
+      json
+      rack
     rails (3.2.11)
       actionmailer (= 3.2.11)
       actionpack (= 3.2.11)
@@ -232,6 +235,7 @@ DEPENDENCIES
   jquery-rails
   meta_request
   pry-rails
+  rack-webconsole
   rails
   rb-fsevent (= 0.9.1)
   rspec-rails

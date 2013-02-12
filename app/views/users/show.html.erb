@@ -1,4 +1,8 @@
-<%= content_for(:title) { @user.name } %>
+ <%= content_for(:title) { @user.name } %>
 
 <h1><%= @user.name %></h1>
 
+<ul>
+  <%= render partial: "shared/post_comment", collection: @posts,
+              as: :post %>
+</ul>

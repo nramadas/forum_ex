@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def new
     @user = User.new
   end
@@ -17,5 +18,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user.last_viewed_user_page = Time.now
+    @user.save!
+    @posts = @user.commented_posts.uniq
   end
 end

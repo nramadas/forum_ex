@@ -12,6 +12,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'sqlite3'
   gem 'capybara'
+  gem 'rack-webconsole'
 end
 
 group :development do
